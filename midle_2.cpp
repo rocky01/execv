@@ -5,13 +5,13 @@
   main()
   {
      pid_t pid;
-     char *const parmList[] = {"/usr/bin/valgrind", "/home/rocky/myprojects/Bogu/b.out", NULL};
+     char *const parmList[] = {"/usr/bin/ls", "ffffffffffff", NULL};
      
-     printf("Running vsalgrind");
+     printf("Running vsalgrind from midle");
      if ((pid = fork()) == -1)
         perror("fork error");
      else if (pid == 0) {
-        execv("/usr/bin/valgrind", parmList);
+        execv("/home/rocky/myprojects/Bogu/last", parmList);
         printf("Return not expected. Must be an execv error.n");
      }
   }
